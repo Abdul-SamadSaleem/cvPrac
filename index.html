@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>my cv</title>
+
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- bootstrap icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+      /* used bootstrap tokens so colors switch with the theme */
+      :root {
+        color-scheme: light dark;
+      }
+      body {
+        background-color: var(--bs-body-bg);
+        color: var(--bs-body-color);
+        scroll-behavior: smooth;
+        transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+      }
+
+      /* quick fade overlay when toggling */
+      .theme-fade::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background: var(--bs-body-bg);
+        opacity: 0;
+        animation: themeFade .28s ease;
+      }
+      @keyframes themeFade {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+
+      .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: var(--bs-secondary-bg);
+      }
+      .section-title {
+        border-bottom: 1px solid var(--bs-border-color);
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+      }
+      #backToTop {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+      }
+
+      /* make links and badges adapt nicely in both themes */
+      a.text-decoration-none { color: var(--bs-link-color); }
+      .badge.bg-secondary { background-color: var(--bs-secondary-bg)!important; color: var(--bs-secondary-color)!important; border: 1px solid var(--bs-border-color); }
+
+      /* respect system preference on first load if no saved choice */
+      @media (prefers-color-scheme: dark) {
+        html:not([data-bs-theme]) {
+          color-scheme: dark;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="#">my cv</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#about">about</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#education">education</a></li>
+          </ul>
+          <button id="themeToggle" class="btn btn-outline-secondary me-2" aria-label="toggle dark mode"><i class="bi bi-moon"></i></button>
+          <button id="printBtn" class="btn btn-primary" aria-label="print page"><i class="bi bi-printer"></i></button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container text-center my-4">
+      <img src="./main.png" alt="me" class="avatar border mb-3">
+      <h1 class="h3">H</h1>
+      <p class="text-muted mb-1">student</p>
+      <p class="mb-0">
+        <a href="mailto:pleaseDontSendAnEmail@gmail.com" class="text-decoration-none me-3"><i class="bi bi-envelope"></i> pleaseDontSendAnEmail@gmail.com</a>
+        <a href="https://github.com/Abdul-SamadSaleem" target="_blank" class="text-decoration-none me-3"><i class="bi bi-github"></i> github</a>
+      </p>
+    </div>
+
+    <main class="container my-5">
+
+      <section id="about" class="mb-5">
+        <h2 class="section-title h5">about me</h2>
+        <p>wagwan general, i'm a developer who likes building random stuff on the web. i mess around with html, css, js, and react cos y not</p>
+      </section>
+
+      <section id="skills" class="mb-5">
+        <h2 class="section-title h5">skills</h2>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge bg-secondary">html</span>
+          <span class="badge bg-secondary">css</span>
+          <span class="badge bg-secondary">javascript</span>
+          <span class="badge bg-secondary">bootstrap</span>
+          <span class="badge bg-secondary">react</span>
+          <span class="badge bg-secondary">git</span>
+          <span class="badge bg-secondary">node.js</span>
+        </div>
+      </section>
+
+      <section id="experience" class="mb-5">
+        <h2 class="section-title h5">experience</h2>
+        <div>
+          <h6 class="mb-1">got none lol</h6>
+          <small class="text-muted">present</small>
+          <p>nah im joking this is just to bring attention, email me 😎</p>
+        </div>
+      </section>
+
+      <section id="projects" class="mb-5">
+        <h2 class="section-title h5">projects</h2>
+        <ul>
+          <li><strong>todo app:</strong> a simple todo app built with react</li>
+          <li><strong>portfolio:</strong> the site you’re on right now lol</li>
+          <li><strong>weather app:</strong> fetches real time weather data using an api</li>
+        </ul>
+      </section>
+
+      <section id="education" class="mb-5">
+        <h2 class="section-title h5">education</h2>
+        <p><strong>professional gamer</strong> - fornite creative mode (present)</p>
+      </section>
+
+    </main>
+
+    <button id="backToTop" class="btn btn-secondary rounded-circle">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
